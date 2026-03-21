@@ -62,7 +62,7 @@ const Footer = () => {
               </p>
               <p>
                 <FaEnvelope />
-                <span>info@eecbrandpromoter.com</span>
+                <span>promoter@businesseasy24.com</span>
               </p>
             </div>
           </div>

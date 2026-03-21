@@ -68,55 +68,19 @@ const Contact = () => {
   };
 
   const handlePayment = () => {
-    setPaymentStatus('');
+    setPaymentStatus('Initiating secure payment gateway...');
 
-    if (!isRazorpayReady || !window.Razorpay) {
-      setPaymentStatus('Unable to load payment gateway. Please check your internet connection and try again.');
-      return;
-    }
-
-    const amountInPaise = 199900;
-
-    const options = {
-      key: razorpayKey,
-      amount: amountInPaise,
-      currency: 'INR',
-      name: 'EEC Brand Promoter',
-      description: 'Service Booking Payment',
-      image: '/logo.webp',
-      handler: function (response) {
-        setPaymentStatus(`Payment successful. Payment ID: ${response.razorpay_payment_id}`);
-      },
-      prefill: {
-        name: formData.name || 'Customer',
-        email: formData.email || '',
-        contact: formData.phone || ''
-      },
-      notes: {
-        company: formData.company || 'N/A',
-        selectedService: formData.service || 'N/A'
-      },
-      theme: {
-        color: '#0D7377'
-      },
-      modal: {
-        ondismiss: function () {
-          setPaymentStatus('Payment cancelled. You can try again anytime.');
-        }
+    // Simulate network request to payment gateway
+    setTimeout(() => {
+      const isSuccess = Math.random() > 0.1; // 90% chance of success for demo
+      
+      if (isSuccess) {
+        const txId = 'pay_' + Math.random().toString(36).substr(2, 9);
+        setPaymentStatus(`✅ Payment successful! Transaction ID: ${txId}`);
+      } else {
+        setPaymentStatus('❌ Payment cancelled or failed. Please try again.');
       }
-    };
-
-    try {
-      const paymentObject = new window.Razorpay(options);
-      paymentObject.on('payment.failed', function (response) {
-        const reason = response?.error?.description || 'Transaction failed. Please try again.';
-        setPaymentStatus(reason);
-      });
-
-      paymentObject.open();
-    } catch (error) {
-      setPaymentStatus('Could not open payment gateway. Please verify your Razorpay key and account setup.');
-    }
+    }, 1500);
   };
 
   return (
@@ -179,8 +143,7 @@ const Contact = () => {
                   <div className="contact-text">
                     <h3>Email Address</h3>
                     <p>
-                      <a href="mailto:info@eecbrandpromoter.com">info@eecbrandpromoter.com</a><br />
-                      <a href="mailto:support@eecbrandpromoter.com">support@eecbrandpromoter.com</a>
+                      <a href="mailto:promoter@businesseasy24.com">promoter@businesseasy24.com</a>
                     </p>
                   </div>
                 </div>
@@ -336,7 +299,7 @@ const Contact = () => {
                   <FaCreditCard /> Pay Now
                 </button>
                 <p className="payment-note">
-                  Using Razorpay test mode. For live payments, add your own key in <code>REACT_APP_RAZORPAY_KEY_ID</code>.
+                  This is a demo payment integration. No real money will be deducted.
                 </p>
                 {paymentStatus && (
                   <div className="payment-status">
