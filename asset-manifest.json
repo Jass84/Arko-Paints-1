@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Arko-Paints-1/static/css/main.8a6d0b93.css",
+    "main.js": "/Arko-Paints-1/static/js/main.65fe55d6.js",
+    "index.html": "/Arko-Paints-1/index.html",
+    "main.8a6d0b93.css.map": "/Arko-Paints-1/static/css/main.8a6d0b93.css.map",
+    "main.65fe55d6.js.map": "/Arko-Paints-1/static/js/main.65fe55d6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a6d0b93.css",
+    "static/js/main.65fe55d6.js"
+  ]
+}
