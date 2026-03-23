@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaUsers, FaMobileAlt, FaVideo, FaCamera, FaCheckCircle } from 'react-icons/fa';
+import { FaUsers, FaMobileAlt, FaVideo, FaCamera, FaCheckCircle, FaBullhorn, FaLanguage, FaMicrophone, FaFilm, FaGraduationCap, FaStar } from 'react-icons/fa';
 import './Home.css';
 
 const Home = () => {
@@ -123,6 +123,72 @@ const Home = () => {
               <p>
                 Professional modeling services for fashion shows, promotional events, 
                 and brand campaigns across India.
+              </p>
+              <Link to="/professional-services" className="service-link">Learn More →</Link>
+            </div>
+
+            <div className="service-card scroll-animate">
+              <div className="service-icon">
+                <FaStar />
+              </div>
+              <h3>Ramp Show & Events</h3>
+              <p>
+                Professional ramp shows, fashion events, and product launches with skilled models and event management.
+              </p>
+              <Link to="/professional-services" className="service-link">Learn More →</Link>
+            </div>
+
+            <div className="service-card scroll-animate">
+              <div className="service-icon">
+                <FaLanguage />
+              </div>
+              <h3>English Language Training</h3>
+              <p>
+                Comprehensive English language training programs for professional development and communication skills.
+              </p>
+              <Link to="/professional-services" className="service-link">Learn More →</Link>
+            </div>
+
+            <div className="service-card scroll-animate">
+              <div className="service-icon">
+                <FaBullhorn />
+              </div>
+              <h3>Digital Marketing</h3>
+              <p>
+                Complete digital marketing solutions including social media advertising, brand promotion, and online campaigns.
+              </p>
+              <Link to="/professional-services" className="service-link">Learn More →</Link>
+            </div>
+
+            <div className="service-card scroll-animate">
+              <div className="service-icon">
+                <FaGraduationCap />
+              </div>
+              <h3>Job Interview Preparation</h3>
+              <p>
+                Expert guidance and training for job interviews, resume building, and career preparation for professionals.
+              </p>
+              <Link to="/professional-services" className="service-link">Learn More →</Link>
+            </div>
+
+            <div className="service-card scroll-animate">
+              <div className="service-icon">
+                <FaFilm />
+              </div>
+              <h3>Acting & Web Series</h3>
+              <p>
+                Professional acting services, web series production, and movie casting with experienced directors and producers.
+              </p>
+              <Link to="/professional-services" className="service-link">Learn More →</Link>
+            </div>
+
+            <div className="service-card scroll-animate">
+              <div className="service-icon">
+                <FaMicrophone />
+              </div>
+              <h3>Social Media & Brand Promotion</h3>
+              <p>
+                Strategic brand promotion services including social media advertising, influencer marketing, and brand awareness campaigns.
               </p>
               <Link to="/professional-services" className="service-link">Learn More →</Link>
             </div>
