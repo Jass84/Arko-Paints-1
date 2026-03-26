@@ -14,9 +14,6 @@ const Contact = () => {
 
   const [formStatus, setFormStatus] = useState('');
   const [paymentStatus, setPaymentStatus] = useState('');
-  const [isRazorpayReady, setIsRazorpayReady] = useState(false);
-  // Use env key if provided, otherwise use Razorpay demo test key
-  const razorpayKey = (process.env.REACT_APP_RAZORPAY_KEY_ID || 'rzp_test_1DP5mmOlF5G5ag').trim();
 
   const loadRazorpayScript = () => {
     return new Promise((resolve) => {
@@ -36,7 +33,6 @@ const Contact = () => {
   useEffect(() => {
     const prepareCheckout = async () => {
       const isLoaded = await loadRazorpayScript();
-      setIsRazorpayReady(isLoaded);
       if (!isLoaded) {
         setPaymentStatus('Payment gateway could not be initialized. Please refresh and try again.');
       }

@@ -5,8 +5,6 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const assetBase = process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
-  const assetUrl = (path) => `${assetBase}${path}`;
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
