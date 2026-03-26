@@ -4,6 +4,10 @@
   "homepage": "https://Jass84.github.io/Arko-Paints-1",
   "description": "EEC Brand Promoter - Staff Providing & Media Services Website",
   "private": true,
+  "engines": {
+    "node": ">=18 <21",
+    "npm": ">=9"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
