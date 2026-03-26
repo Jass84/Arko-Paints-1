@@ -6,6 +6,7 @@ const Gallery = () => {
     const [selectedMedia, setSelectedMedia] = useState(null);
     const [filter, setFilter] = useState('all');
     const galleryGridRef = useRef(null);
+    const assetUrl = (path) => `${process.env.PUBLIC_URL}${path}`;
 
     useEffect(() => {
         const observerOptions = {
@@ -29,18 +30,20 @@ const Gallery = () => {
 
     // Gallery items with actual images and videos
     const galleryItems = [
-        { id: 1, type: 'video', category: 'work', title: 'Work Project Video', description: 'Behind the scenes of our projects', video: '/work-video-1.mp4' },
-        { id: 2, type: 'video', category: 'work', title: 'App Development', description: 'Mobile app creation process' ,video: '/work-video-2.mp4'},
-        { id: 3, type: 'video', category: 'work', title: 'Professional Services', description: 'Professional video production showcase', video: '/work-video-3.mp4' },
-        { id: 4, type: 'video', category: 'office', title: 'Office Space', description: 'Our professional office environment', video: '/work-video-4.mp4' },
-        { id: 5, type: 'video', category: 'team', title: 'Team Meeting', description: 'Collaborative work sessions',video: '/work-video-5.mp4'   },
-        { id: 6, type: 'video', category: 'events', title: 'Fashion Event', description: 'Professional fashion show coverage',video: '/work-video-6.mp4' },
-        { id: 7, type: 'video', category: 'office', title: 'Reception Area', description: 'Welcoming office entrance',video: '/work-video-7.mp4' },
-        { id: 8, type: 'image', category: 'team', title: 'Creative Team', description: 'Our talented professionals' ,image: '/office-photo.webp'},
-        { id: 9, type: 'image', category: 'events', title: 'Corporate Event', description: 'Professional event management',image: '/port.jpg'},
-        { id: 10, type: 'image', category: 'office', title: 'Work Stations', description: 'Collaborative workspaces', image: '/work station.jpg'},
-        { id: 11, type: 'image', category: 'team', title: 'Leadership Team', description: 'Experienced management', image: '/team.jpg'},
-        { id: 12, type: 'image', category: 'events', title: 'Product Launch', description: 'Successful brand launch', image: '/product.jpg'},
+        { id: 1, type: 'video', category: 'work', title: 'Work Project Video', description: 'Behind the scenes of our projects', video: assetUrl('/work-video-1.mp4') },
+        { id: 2, type: 'video', category: 'work', title: 'App Development', description: 'Mobile app creation process' ,video: assetUrl('/work-video-2.mp4')},
+        { id: 3, type: 'video', category: 'work', title: 'Professional Services', description: 'Professional video production showcase', video: assetUrl('/work-video-3.mp4') },
+        { id: 4, type: 'video', category: 'office', title: 'Office Space', description: 'Our professional office environment', video: assetUrl('/work-video-4.mp4') },
+        { id: 5, type: 'video', category: 'team', title: 'Team Meeting', description: 'Collaborative work sessions', video: assetUrl('/work-video-5.mp4') },
+        { id: 6, type: 'video', category: 'events', title: 'Fashion Event', description: 'Professional fashion show coverage', video: assetUrl('/work-video-6.mp4') },
+        { id: 7, type: 'video', category: 'office', title: 'Reception Area', description: 'Welcoming office entrance', video: assetUrl('/work-video-7.mp4') },
+        { id: 8, type: 'video', category: 'work', description: 'Brand promoter showcase', video: 'https://media.discordapp.net/attachments/1274236411930869760/1486599228804304946/VID-20260319-WA0003.mp4?ex=69c616eb&is=69c4c56b&hm=9886e187a7f3e7e370919ed7d11e29c99264f67f5d9924d64e5862739ac3ce14&' },
+        { id: 9, type: 'video', category: 'work', description: 'Brand promoter showcase', video: 'https://media.discordapp.net/attachments/1274236411930869760/1486599228309504020/VID-20260319-WA0004.mp4?ex=69c616eb&is=69c4c56b&hm=c83e1791f614290f493c9785cc081642ba2e6ab1de7b3016e47af59b044b0ed9&' },
+        { id: 10, type: 'image', category: 'team', title: 'Creative Team', description: 'Our talented professionals', image: assetUrl('/office-photo.webp') },
+        { id: 11, type: 'image', category: 'events', title: 'Corporate Event', description: 'Professional event management', image: assetUrl('/port.jpg') },
+        { id: 12, type: 'image', category: 'office', title: 'Work Stations', description: 'Collaborative workspaces', image: assetUrl('/work-station.jpg') },
+        { id: 13, type: 'image', category: 'team', title: 'Leadership Team', description: 'Experienced management', image: assetUrl('/team.jpg') },
+        { id: 14, type: 'image', category: 'events', title: 'Product Launch', description: 'Successful brand launch', image: assetUrl('/product.jpg') },
     ];
 
     const filteredItems = filter === 'all'
